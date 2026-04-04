@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application Form</title>
+  <style>
+    /* Page background */
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #1e90ff, #6dd5fa, #ffffff);
+    }
+
+    /* Form container */
+    .form-container {
+      background: #fff;
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      width: 600px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Heading */
+    h2 {
+      color: #1e90ff;
+      margin-bottom: 25px;
+      font-size: 26px;
+      font-weight: 700;
+      position: relative;
+      text-transform: uppercase;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #1e90ff;
+      margin: 8px auto 0;
+      border-radius: 5px;
+    }
+
+    /* Form groups */
+    .form-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    /* Inputs & Textarea */
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="tel"],
+    textarea,
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-sizing: border-box;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus,
+    input[type="file"]:focus {
+      border-color: #1e90ff;
+      box-shadow: 0 0 8px rgba(30, 144, 255, 0.4);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* Submit Button */
+    button {
+      background: linear-gradient(90deg, #1e90ff, #104e8b);
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #104e8b, #1e90ff);
+      transform: scale(1.02);
+      box-shadow: 0 6px 15px rgba(30, 144, 255, 0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .form-container {
+        width: 90%;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Application Form</h2>
+    <form>
+      <div class="form-group">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="yearsExperience">Years of Experience:</label>
+        <input type="number" id="yearsExperience" name="yearsExperience" required placeholder="Enter years of experience">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+      </div>
+      <div class="form-group">
+        <label for="coverLetter">Cover Letter:</label>
+        <textarea id="coverLetter" name="coverLetter" required placeholder="Write your cover letter here"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="cv">Upload CV:</label>
+        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+      </div>
+      <button type="submit">Submit Application</button>
+    </form>
+  </div>
+</body>
+</html>

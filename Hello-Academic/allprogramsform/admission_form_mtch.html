@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCA Admission Form - Hello-Academic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff7f50;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input, select, textarea {
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        textarea{
+            position: relative;
+            width: 95%;
+            height: 200px;
+        }
+
+        button {
+            padding: 14px;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(90deg, #ff7f50, #ffcc00);
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>M.Tech Admission Form</h1>
+        <form>
+            <input type="text" name="first_name" placeholder="Full Name" required>
+            <input type="text" name="middle_name" placeholder="Middle Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="text" name="father_name" placeholder="Father's Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="address" name="address" placeholder="Your Address" required>
+            
+            <select name="qualification" required>
+                <option value="">Select Your Last Qualification</option>
+                <option value="bsc">MCA</option>
+                <option value="bca">B.Tech</option>
+                <option value="other">Other</option>
+            </select>
+            <textarea name="about-your-self" placeholder="About Your Self " required></textarea>
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+</body>
+</html>

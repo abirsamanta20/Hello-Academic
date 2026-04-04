@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers | Technical College</title>
+  <style>
+    /* Reset */
+    /* * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #a8edea, #fed6e3);
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+    } */
+
+    /* Hero Banner Box (Navigation) */
+.herobanner-box {
+    width: auto;
+    margin-top: -10px;
+    background: #05235c;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    overflow: hidden; 
+    
+}
+
+/* Navigation links */
+.herobanner-box nav {
+    display: flex;
+    gap: 40px;
+}
+
+.herobanner-box nav a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.herobanner-box nav a:hover {
+    color: #ffcc00;
+}
+
+/* Action buttons */
+.herobanner-box .actions {
+    display: flex;
+    gap: 20px;
+}
+
+.herobanner-box .actions a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 18px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.herobanner-box .actions a.admission {
+    border: 1px solid white;
+    color: white;
+    background: transparent;
+}
+
+.herobanner-box .actions a.admission:hover {
+    background: white;
+    color: black;
+}
+
+.herobanner-box .actions a.contact {
+    background: linear-gradient(90deg, #333, #555);
+    color: white;
+}
+
+.herobanner-box .actions a.contact:hover {
+    background: linear-gradient(90deg, #444, #666);
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Banner Section */
+.herobanner {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden; 
+}
+
+.herobanner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./Image/herobanner_background.jpg") no-repeat center center/cover;
+    filter: blur(5px);
+    transform: scale(1.1);
+    z-index: -1;
+}
+
+/* Hero Banner Content */
+.herobanner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+    z-index: 1;
+}
+
+.herobanner-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.herobanner-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+    /* Navbar */
+
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+
+    nav a:hover {
+      color: #0077b6;
+    }
+
+    .actions a {
+      text-decoration: none;
+      margin-left: 15px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .admission {
+      background: #0077b6;
+      color: #fff;
+    }
+
+    .admission:hover {
+      background: #00b4d8;
+    }
+
+    .contact {
+      background: #fff;
+      color: #0077b6;
+    }
+
+    .contact:hover {
+      background: #0077b6;
+      color: #fff;
+    }
+
+    /* About Careers */
+    .about {
+      text-align: center;
+      margin-bottom: 60px;
+      padding: 40px 20px;
+    }
+    .about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .about p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: auto;
+      color: #555;
+    }
+
+    /* Careers Grid */
+    .careers-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      padding: 0 20px 60px;
+    }
+
+    /* Career Card (now <a>) */
+    .career-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      width: 300px;
+      height: 250px;
+    }
+
+    .career-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(120deg, rgba(0,119,182,0.2), rgba(0,180,216,0.2), rgba(0,119,182,0.2));
+      transform: rotate(45deg);
+      transition: all 0.7s ease;
+      opacity: 0;
+    }
+
+    .career-card:hover::before {
+      top: 0;
+      left: 0;
+      opacity: 1;
+    }
+
+    .career-card:hover {
+      transform: translateY(-12px) scale(1.05);
+      border: 1px solid #53b6eb;
+      box-shadow: 0 15px 35px rgba(0,119,182,0.3);
+    }
+
+    .career-card h3 {
+      font-size: 1.5rem;
+      color: #0077b6;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .career-card p {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .career-card::after {
+      content: 'Apply Now →';
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      font-size: 0.9em;
+      font-weight: 600;
+      color: #fff;
+      background: #0077b6;
+      padding: 6px 14px;
+      border-radius: 12px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.3s ease;
+      pointer-events: none;
+    }
+
+    .career-card:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Why Join Us */
+    .why {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      margin-top: 80px;
+      padding: 20px;
+    }
+
+    .why h2 {
+      font-size: 2.3rem;
+      margin-bottom: 70px;
+    }
+
+    .why-features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+    }
+
+    /* Why Box */
+    .why-box {
+      flex: 1 1 220px;
+      width: 220px;
+      height: 210px;
+      background: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .why-box::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      opacity: 0.1;
+      transition: all 0.5s ease;
+      z-index: 0;
+    }
+
+    .why-box:hover::after {
+      top: 0;
+      opacity: 0.2;
+    }
+
+    .why-box:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,180,216,0.3);
+    }
+
+    .why-box h4, .why-box p {
+      position: relative;
+      z-index: 1;
+      transition: color 0.3s ease;
+    }
+
+    .why-box:hover h4, .why-box:hover p {
+      color: #0077b6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about h2 { font-size: 2rem; }
+      .careers-grid, .why-features { flex-direction: column; }
+      .herobanner-box { flex-direction: column; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+    <Div class="main">
+        <div class="herobanner-box">
+            <nav>
+                <a href="index.html" class="logo">Hello-Academic</a>
+                <a href="index.html">Home</a>
+                <a href="index.html#about-section">About</a>
+                <a href="index.html#program-section">Program</a>
+                <a href="index.html#hello-placement">Placement</a>
+                <a href="index.html#college-campus">Campus</a>
+
+            </nav>
+            <div class="actions">
+                <a href="Careers.html" class="admission">Careers</a>
+                <a href="contact.html"  class="contact">Contact</a>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="herobanner">
+                <div class="herobanner-content">
+                    <h1>Welcome to Hello-Academic</h1>
+                    <p>Your journey to excellence begins here. Join us to unlock your potential and achieve your dreams.</p>      
+                </div>
+            </div>
+
+
+        </div>
+
+    <!-- About -->
+    <section class="about" id="about-section">
+      <h2>Ready to Start Your Career Journey with Hello-Academic</h2>
+      <p>We prepare students with skills, industry experience, and a pathway to global careers. Join us and unlock your potential in education, research, and administration.</p>
+    </section>
+
+    <!-- Career Listings -->
+    <section>
+      <div class="careers-grid">
+        <a href="CareersApply.html" class="career-card">
+          <h3>Assistant Professor</h3>
+          <p>Teach and mentor students while contributing to curriculum development and research projects.</p>
+        </a>
+        <a href="CareersApply.html" class="career-card">
+          <h3>Lab Assistant</h3>
+          <p>Support faculty and students in lab experiments, maintain equipment, and ensure safety protocols.</p>
+        </a>
+        <a href="CareersApply.html" class="career-card">
+          <h3>Office Manager</h3>
+          <p>Oversee administrative tasks, coordinate departments, and manage day-to-day office operations efficiently.</p>
+        </a>
+        <a href="CareersApply.html" class="career-card">
+          <h3>Librarian</h3>
+          <p>Manage library resources, assist students and faculty, and organize educational materials.</p>
+        </a>
+        <a href="CareersApply.html" class="career-card">
+          <h3>Admissions Coordinator</h3>
+          <p>Guide prospective students through the admissions process and handle enrollment activities.</p>
+        </a>
+        <a href="CareersApply.html" class="career-card">
+          <h3>Placement Coordinator</h3>
+          <p>Guide students, organize recruitment drives, and build strong employer relationships.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Why Join Us -->
+    <section class="why">
+      <h2>Why Choose Us?</h2>
+      <div class="why-features">
+        <div class="why-box">
+          <h4>🌍 Industry Partnerships</h4>
+          <p>Work with top institutions through strong placement programs.</p>
+        </div>
+        <div class="why-box">
+          <h4>🧑‍🔬 Research Labs</h4>
+          <p>Explore innovation and contribute to practical research projects.</p>
+        </div>
+        <div class="why-box">
+          <h4>🎯 Career Guidance</h4>
+          <p>Receive mentorship and guidance to achieve your academic and professional goals.</p>
+        </div>
+        <div class="why-box">
+          <h4>🚀 Growth Opportunities</h4>
+          <p>Enhance skills and leadership potential through internships and workshops.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
